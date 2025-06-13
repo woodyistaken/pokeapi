@@ -1,0 +1,13 @@
+<%=form_with url:staticpages_path, method: :get do |form|%>
+<%=form.label :name, "Pokemon Name: "%>
+<%=form.text_field :name%>
+<%=form.submit "Search"%>
+<%end%>
+<h1><%=@pokemon.name%></h1>
+<h4>Abilities</h4>
+<ul>
+
+<%@pokemon.abilities.each do |wrapper|%>
+<li><%=wrapper.ability.name%></li>
+<%end%>
+</ul>
